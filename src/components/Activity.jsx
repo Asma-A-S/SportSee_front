@@ -1,4 +1,3 @@
-import '../style/activity.scss'
 import {
     BarChart,
     Bar,

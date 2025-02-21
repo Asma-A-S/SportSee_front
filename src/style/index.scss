@@ -1,0 +1,198 @@
+@import './variables.scss';
+body {
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    min-width: 1024px;
+    min-height: 780px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+#root,
+.app-container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    min-width: 1024px;
+    min-height: 780px;
+}
+.content-wrapper {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    width: 100%;
+    height: calc(100vh - 91px);
+    margin-top: 91px;
+}
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 60px;
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-bottom: 60px;
+    min-width: auto;
+    width: 100%;
+    height: calc(100% - 91px);
+    margin-left: 117px;
+    @media screen and (max-width: 1240px) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+.main-graphiques {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    flex: 1;
+
+    .graphiques {
+        position: relative;
+        width: 68%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @media screen and (max-width: 1240px) {
+            width: 74%;
+        }
+        &_perf {
+            width: 100%;
+            height: 47%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            @media screen and (max-width: 1240px) {
+                height: 42%;
+            }
+        }
+        .graph {
+            height: 50%;
+        }
+    }
+    .nutrients {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 29%;
+        @media screen and (max-width: 1240px) {
+            width: 23%;
+        }
+    }
+}
+.profil {
+    font-size: 48px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0;
+    &_name {
+        color: $primary;
+    }
+    &_texte {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+}
+.chart {
+    max-width: 300px;
+    width: 32%;
+    aspect-ratio: 1/1;
+    border-radius: $radius;
+    background-color: #282d30;
+    @media screen and (max-width: 1240px) {
+        width: 32%;
+    }
+}
+.score {
+    background-color: $tertiary;
+    border-radius: $radius;
+    .score-title {
+        margin-top: 30px;
+        margin-left: 30px;
+        color: #20253a;
+        font-size: 15px;
+        font-weight: 500;
+        position: absolute;
+        @media screen and (max-width: 1240px) {
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+    }
+}
+.performance {
+    background-color: #282d30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .polar-tick {
+        font-size: clamp(10px, 1vw, 12px);
+    }
+}
+.session {
+    background-color: #ff0000;
+    .session-title {
+        margin-left: 30px;
+        margin-top: 30px;
+        color: #fbfbfb;
+        font-size: clamp(12px, 1vw, 15px);
+        font-weight: 400;
+        position: absolute;
+        text-wrap: wrap;
+        opacity: 0.6;
+        @media screen and (max-width: 1240px) {
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+    }
+}
+.graph {
+    background-color: $tertiary;
+    border-radius: $radius;
+    max-height: 320px;
+}
+
+.calories {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    background-color: #fbfbfb;
+    box-shadow: $box-shadow;
+    width: 100%;
+    min-height: 100px;
+    &_icone {
+        width: 60px;
+        height: 60px;
+    }
+    &_infos {
+        width: 92px;
+    }
+    &_value {
+        font-size: clamp(16px, 2vw, 20px);
+        font-weight: 700;
+        line-height: 24px;
+        color: #282d30;
+        margin: 0;
+    }
+    &_name {
+        font-size: clamp(10px, 3vw, 14px);
+        font-weight: 500;
+        line-height: 24px;
+        color: $secondary;
+        margin: 0;
+    }
+}

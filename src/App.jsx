@@ -1,24 +1,23 @@
 import React from 'react'
-import HorizontalNav from './components/HorizontalNav'
-import VerticalNav from './components/VerticalNav'
+import HorizontalNav from './components/horizontalNav/HorizontalNav.jsx'
+import VerticalNav from './components/verticalNav/VerticalNav.jsx'
 import RoutesApp from './routes.jsx'
 //import Dashboard from './components/Dashboard'
-import { getUserMainData } from './services/api.js'
-import { getUserActivity } from './services/api.js'
-import { getUserAverageSessions } from './services/api.js'
-import { getUserPerformance } from './services/api.js'
+
 import { BrowserRouter as Router } from 'react-router-dom'
 
 function App() {
-    getUserMainData(12)
-    getUserActivity(12)
-    getUserAverageSessions(12)
-    getUserPerformance(12)
     return (
         <Router>
-            <HorizontalNav />
-            <RoutesApp />
-            <VerticalNav />
+            <div className="app-container">
+                <HorizontalNav />
+                <div className="content-wrapper">
+                    <VerticalNav />
+                    <div className="main-content">
+                        <RoutesApp />
+                    </div>
+                </div>
+            </div>
         </Router>
     )
 }

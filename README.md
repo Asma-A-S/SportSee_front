@@ -50,7 +50,7 @@ Clonez le dépôt du projet (https://github.com/OpenClassrooms-Student-Center/Sp
 
 ### Gestion des données:
 
-Le projet utiliseun mécanisme de récupération de données qui varie en fonction de l'environnement.
+Le projet utilise un mécanisme de récupération de données qui varie en fonction de l'environnement.
 
--   En développement (NODE_ENV=development), les données sont récupérées depuis un mock local situé dans **mocks**/mockData.js.
--   En production, l'application effectue des requêtes HTTP vers l'API REST de SportSee
+-   Par défault, les données utilisées sont des données mockées récupérées depuis un fichier local situé dans **mocks**/mockData.js.
+-   Pour utiliser les données via l'API REST de SportSee, il suffit de changer la variable VITE_USE_MOCK à false dans le fichier .env.

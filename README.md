@@ -32,13 +32,13 @@ L'application est développée avec React et utilise Recharts pour l'affichage d
 
 ### 1. Back-End:
 
-Clonez le dépôt du projet `https://github.com/OpenClassrooms-Student-Center/SportSee` et suivez les instructions de son README.md pour son installation et démarrez le.
+Clonez le dépôt du projet (https://github.com/OpenClassrooms-Student-Center/SportSee) et suivez les instructions de son README.md pour son installation et son démarrage.
 
 ### 2. Front-End:
 
-#### 2.1.
+#### 2.1. Clonez le dépôt:
 
-    Clonez le dépôt: `https://github.com/Asma-A-S/SportSee_front.git`
+    (https://github.com/Asma-A-S/SportSee_front.git)
 
 #### 2.2. Installer les dépendances:
 

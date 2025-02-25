@@ -44,9 +44,9 @@ Clonez le dépôt du projet `https://github.com/OpenClassrooms-Student-Center/Sp
 
     npm install
 
-#### 2.3.
+#### 2.3. Démarrer l'application React:
 
-    Démarrer l'application React: npm run dev
+    npm run dev
 
 ### Gestion des données:
 

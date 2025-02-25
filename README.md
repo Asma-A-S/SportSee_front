@@ -38,7 +38,7 @@ Clonez le dépôt du projet (https://github.com/OpenClassrooms-Student-Center/Sp
 
 #### 2.1. Clonez le dépôt:
 
-    (https://github.com/Asma-A-S/SportSee_front.git)
+    [Sportsee front-end](https://github.com/Asma-A-S/SportSee_front.git)
 
 #### 2.2. Installer les dépendances:
 

@@ -13,6 +13,14 @@ import proteines from '../../assets/protein-icon.png'
 import glucides from '../../assets/carbs-icon.png'
 import lipids from '../../assets/fat-icon.png'
 
+/**
+ * Composant affichant le profil de l'utilisateur avec différentes sections :
+ * - Données principales de l'utilisateur
+ * - Cartes des nutriments (Calories, Protéines, Glucides, Lipides)
+ * - Graphiques d'activité, de sessions moyennes, de performance et de score.
+ *
+ * @returns {JSX.Element} Le profil complet de l'utilisateur avec des informations et des graphiques associés.
+ */
 function Profil() {
     return (
         <UserProvider>

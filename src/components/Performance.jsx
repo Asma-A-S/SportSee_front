@@ -10,6 +10,12 @@ import {
     PolarRadiusAxis,
     ResponsiveContainer,
 } from 'recharts'
+
+/**
+ * Afficher la performance de l'utilisateur dans plusieurs domaines sous forme d'un graphique radar.
+ *
+ * @returns {JSX.Element} Un graphique radar représentant la performance de l'utilisateur dans différentes catégories.
+ */
 function Performance() {
     const { userId } = useParams()
     const { data: userPerformance, loading } = useEffectGetData(

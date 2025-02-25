@@ -8,6 +8,14 @@ import {
     Legend,
     ResponsiveContainer,
 } from 'recharts'
+
+/**
+ * Composant affichant le score de l'utilisateur sous forme de graphique radial
+ * accompagné d'une légende indiquant le pourcentage de l'objectif.
+ * Le score est calculé en multipliant la donnée récupérée par 100 pour obtenir un pourcentage.
+ *
+ * @returns {JSX.Element} Un graphique radial représentant le score de l'utilisateur.
+ */
 function Score() {
     const { userId } = useParams()
     const { data: userMainData, loading } = useEffectGetData(

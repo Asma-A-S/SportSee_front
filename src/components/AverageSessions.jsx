@@ -11,6 +11,15 @@ import {
     Rectangle,
     ResponsiveContainer,
 } from 'recharts'
+
+/**
+ * Composant personnalisé pour afficher un tooltip personnalisé dans le graphique.
+ *
+ * @param {Object} props - Les propriétés du tooltip.
+ * @param {boolean} props.active - Indique si le tooltip est actif.
+ * @param {Array<Object>} props.payload - Les données associées au tooltip.
+ * @returns {JSX.Element|null} Le contenu du tooltip ou null si inactif.
+ */
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         return (
@@ -33,6 +42,13 @@ const CustomTooltip = ({ active, payload }) => {
 
     return null
 }
+/**
+ * Composant personnalisé pour le curseur du graphique.
+ *
+ * @param {Object} props - Les propriétés du curseur.
+ * @param {Array<Object>} props.points - Les points du curseur.
+ * @returns {JSX.Element} Le composant Rectangle représentant le curseur.
+ */
 const CustomCursor = ({ points }) => {
     return (
         <Rectangle
@@ -44,14 +60,13 @@ const CustomCursor = ({ points }) => {
         />
     )
 }
-function extendData(data) {
-    const first = { day: 'fi', sessionLength: data[0].sessionLength }
-    const last = {
-        day: 'la',
-        sessionStorage: data[data.length - 1].sessionLength,
-    }
-    return [first, ...data, last]
-}
+
+/**
+ *
+ * Utiliser les données des sessions de l'utilisateur pour afficher la durée moyenne de ces sessions dans un graphique en ligne.
+ *
+ * @returns {JSX.Element} Le composant affichant le graphique des sessions moyennes.
+ */
 function AverageSessions() {
     const { userId } = useParams()
     const { data: userAverageSessions, loading } = useEffectGetData(

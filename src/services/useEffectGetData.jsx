@@ -1,6 +1,18 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+/**
+ * Récupérer des données d'une fonction d'API, les formater avec une classe modèle,
+ * et gérer l'état de chargement ainsi que la navigation en cas d'erreur ou d'absence d'identifiant utilisateur.
+ *
+ * @param {Function} getDataFunction Fonction utilisée pour récupérer les données de l'API/données mockées.
+ * @param {number} userId Identifiant de l'utilisateur pour récupérer les données associées.
+ * @param {Class} ModelClass Classe utilisée pour formater les données reçues, ou null si aucun formatage n'est nécessaire.
+ *
+ * @returns {Object} Un objet contenant :
+ * - `data` : Les données récupérées et formatées, ou null si la récupération échoue.
+ * - `loading` : Un booléen indiquant si les données sont en cours de chargement.
+ */
 const useEffectGetData = (getDataFunction, userId, ModelClass) => {
     const navigate = useNavigate()
     const [data, setData] = useState(null)
@@ -25,7 +37,6 @@ const useEffectGetData = (getDataFunction, userId, ModelClass) => {
                 setData(formattedData)
             } catch (err) {
                 console.error(err)
-                // setError(true)
             } finally {
                 setLoading(false)
             }

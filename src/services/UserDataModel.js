@@ -1,5 +1,5 @@
 /**
- *
+ * formater et modélier les données avant de les utiliser dans les graphiques
  */
 export class UserMainData {
     constructor(data) {

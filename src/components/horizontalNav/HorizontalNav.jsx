@@ -1,6 +1,12 @@
 import logo from '../../assets/logo.png'
 import { NavLink } from 'react-router-dom'
 import '../horizontalNav/horizontalNav.scss'
+/**
+ * Composant qui représente la barre de navigation horizontale.
+ * Cette barre affiche le logo et les liens de navigation vers les autres pages de l'application
+ * @returns {JSX.Element} le composant de la navigation horizentale
+ */
+
 function HorizontalNav() {
     const id = 12
     return (

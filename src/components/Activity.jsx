@@ -14,6 +14,13 @@ import { getUserActivity } from '../services/api'
 import useEffectGetData from '../services/useEffectGetData'
 import { UserActivity } from '../services/UserDataModel'
 
+/**
+ * Customiser le tooltip.
+ * @param {Object} props - Propriétés du composant.
+ * @param {boolean} props.active - Indique si le tooltip est actif.
+ * @param {Array} props.payload - Données associées au tooltip.
+ * @returns {JSX.Element|null} Le tooltip affichant les valeurs en kg et kCal.
+ */
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         return (
@@ -41,6 +48,16 @@ const CustomTooltip = ({ active, payload }) => {
 
     return null
 }
+
+/**
+ * Personnaliser le curseur affiché au survol des barres du graphique.
+ * @param {Object} props - Propriétés du composant.
+ * @param {number} props.x - Position x du curseur.
+ * @param {number} props.y - Position y du curseur.
+ * @param {number} props.width - Largeur du curseur.
+ * @param {number} props.height - Hauteur du curseur.
+ * @returns {JSX.Element} Un rectangle semi-transparent servant de curseur.
+ */
 const CustomCursor = ({ x, y, width, height }) => {
     const cursorWidth = 56
     return (
@@ -54,6 +71,13 @@ const CustomCursor = ({ x, y, width, height }) => {
         />
     )
 }
+
+/**
+ * Composant représentant le graphique d'activité quotidienne sous forme de barre.
+ * Il récupère les données d'activité d'un utilisateur et les affiche sous forme de barres.
+ * @returns {JSX.Element} Le graphique d'activité.
+ */
+
 function Activity() {
     const { userId } = useParams()
 
@@ -85,7 +109,7 @@ function Activity() {
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                     data={userActivity.sessions}
-                    margin={{ top: 20, right: 40, left: 40, bottom: 30 }}
+                    margin={{ top: 0, right: 40, left: 40, bottom: 20 }}
                     barGap={6}
                 >
                     <CartesianGrid strokeDasharray="2" vertical={false} />
@@ -94,7 +118,7 @@ function Activity() {
                         tickLine={false}
                         scale="point"
                         axisLine={{ fill: '#DEDEDE' }}
-                        dy={15}
+                        dy={10}
                         tick={{
                             fill: '#9B9EAC',
                             fontSize: '14px',
@@ -129,7 +153,7 @@ function Activity() {
                                 style={{
                                     color: '#74798C',
                                     marginLeft: '10px',
-                                    marginRight: '30px',
+                                    marginRight: '20px',
                                     fontSize: '14px',
                                     fontWeight: '500',
                                 }}

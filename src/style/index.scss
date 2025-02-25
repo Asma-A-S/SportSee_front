@@ -34,18 +34,17 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 20px;
     padding-top: 60px;
     padding-left: 80px;
     padding-right: 80px;
-    margin-bottom: 60px;
+    padding-bottom: 80px;
     min-width: auto;
     width: 100%;
-    height: calc(100% - 91px);
     margin-left: 117px;
     @media screen and (max-width: 1240px) {
         padding-left: 50px;
         padding-right: 50px;
+        padding-bottom: 60px;
     }
 }
 
@@ -56,8 +55,7 @@ body {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    flex: 1;
-
+    margin-top: 30px;
     .graphiques {
         position: relative;
         width: 68%;
@@ -66,7 +64,7 @@ body {
         flex-direction: column;
         justify-content: space-between;
         @media screen and (max-width: 1240px) {
-            width: 74%;
+            width: 70%;
         }
         &_perf {
             width: 100%;
@@ -89,7 +87,7 @@ body {
         justify-content: space-between;
         width: 29%;
         @media screen and (max-width: 1240px) {
-            width: 23%;
+            width: 27%;
         }
     }
 }
@@ -163,6 +161,9 @@ body {
     background-color: $tertiary;
     border-radius: $radius;
     max-height: 320px;
+    .recharts-legend-wrapper {
+        margin-top: 20px;
+    }
 }
 
 .calories {
@@ -173,7 +174,7 @@ body {
     background-color: #fbfbfb;
     box-shadow: $box-shadow;
     width: 100%;
-    min-height: 100px;
+    min-height: 85px;
     &_icone {
         width: 60px;
         height: 60px;

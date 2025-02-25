@@ -3,6 +3,12 @@ import swim from '../../assets/swim.png'
 import velo from '../../assets/velo.png'
 import build from '../../assets/build.png'
 import './verticalNav.scss'
+/**
+ * Représente la barre de navigation verticale.
+ * Affiche une série d'icônes correspondant aux différentes activités sportives,
+ * ainsi qu'un texte de copyright.
+ * @returns {JSX.Element} Le composant de navigation verticale.
+ */
 function VerticalNav() {
     return (
         <div className="vertical-nav">

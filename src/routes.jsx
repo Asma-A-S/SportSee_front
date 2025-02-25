@@ -6,6 +6,18 @@ import Settings from './pages/settings/Settings'
 import Community from './pages/community/Community'
 import NotFound from './pages/notFound/NotFound'
 
+/**
+ * Composant gérant les routes de l'application.
+ * Définit les chemins et les composants associés pour la navigation.
+ *
+ * - "/" : Affiche la page d'accueil (`Home`).
+ * - "/user/:userId" : Affiche le profil de l'utilisateur (`Profil`).
+ * - "/settings" : Affiche la page des paramètres (`Settings`).
+ * - "/community" : Affiche la page de la communauté (`Community`).
+ * - "*" : Affiche la page "NotFound" pour les chemins inconnus.
+ *
+ * @returns {JSX.Element} La configuration des routes de l'application.
+ */
 function RoutesApp() {
     return (
         <Routes>

@@ -5,7 +5,7 @@ export class UserMainData {
     constructor(data) {
         this.userId = data.id
         this.firstName = data.userInfos.firstName
-        this.score = data.todayScore || data.score
+        this.score = data.todayScore * 100 || data.score * 100
         this.calories = data.keyData.calorieCount
         this.proteines = data.keyData.proteinCount
         this.glucides = data.keyData.carbohydrateCount

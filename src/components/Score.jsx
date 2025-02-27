@@ -16,18 +16,8 @@ import {
  *
  * @returns {JSX.Element} Un graphique radial représentant le score de l'utilisateur.
  */
-function Score() {
-    const { userId } = useParams()
-    const { data: userMainData, loading } = useEffectGetData(
-        getUserMainData,
-        userId,
-        UserMainData
-    )
-    if (loading) return <p>Chargement des données...</p>
-
-    const score = userMainData.score * 100
-    const scoreData = [{ name: 'Score', value: score, fill: 'red' }]
-
+function Score({ data }) {
+    const scoreData = [{ name: 'Score', value: data, fill: 'red' }]
     return (
         <div className="chart score">
             <p className="score-title">Score</p>
@@ -39,7 +29,7 @@ function Score() {
                     outerRadius="90%"
                     data={scoreData}
                     startAngle={90}
-                    endAngle={90 + (360 * score) / 100}
+                    endAngle={90 + (360 * data) / 100}
                 >
                     <circle
                         cx="50%"
@@ -80,7 +70,7 @@ function Score() {
                                         marginBottom: '0',
                                     }}
                                 >
-                                    {userMainData.score * 100}%
+                                    {data}%
                                 </p>
                                 <p
                                     style={{

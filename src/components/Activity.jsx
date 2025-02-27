@@ -78,17 +78,8 @@ const CustomCursor = ({ x, y, width, height }) => {
  * @returns {JSX.Element} Le graphique d'activité.
  */
 
-function Activity() {
-    const { userId } = useParams()
-
-    const { data: userActivity, loading } = useEffectGetData(
-        getUserActivity,
-        userId,
-        UserActivity
-    )
-
-    if (loading) return <p>Chargement des données...</p>
-
+function Activity({ data }) {
+    console.log('act', data)
     return (
         <div className="graph">
             <h2
@@ -108,7 +99,7 @@ function Activity() {
             </h2>
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart
-                    data={userActivity.sessions}
+                    data={data}
                     margin={{ top: 0, right: 40, left: 40, bottom: 20 }}
                     barGap={6}
                 >

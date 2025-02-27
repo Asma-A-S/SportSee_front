@@ -1,7 +1,3 @@
-import { useParams } from 'react-router-dom'
-import { getUserPerformance } from '../services/api'
-import useEffectGetData from '../services/useEffectGetData'
-import { UserPerformance } from '../services/UserDataModel'
 import {
     Radar,
     RadarChart,
@@ -16,14 +12,7 @@ import {
  *
  * @returns {JSX.Element} Un graphique radar représentant la performance de l'utilisateur dans différentes catégories.
  */
-function Performance() {
-    const { userId } = useParams()
-    const { data: userPerformance, loading } = useEffectGetData(
-        getUserPerformance,
-        userId,
-        UserPerformance
-    )
-    if (loading) return <p>Chargement des données...</p>
+function Performance({ data }) {
     return (
         <div className="chart performance">
             <ResponsiveContainer width="100%" height="100%">
@@ -32,7 +21,7 @@ function Performance() {
                     cy="50%"
                     outerRadius={'60%'}
                     innerRadius={'5%'}
-                    data={userPerformance?.data}
+                    data={data}
                 >
                     <PolarGrid radialLines={false} />
                     <PolarAngleAxis

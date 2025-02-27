@@ -1,5 +1,3 @@
-import { useUser } from '../services/UserProvider'
-
 /**
  * Composant affichant les valeurs nutritionnelles de l'utilisateur (calories, protéines, glucides, lipides)
  * sous forme de cartes avec une icône et un nom de nutriment.
@@ -10,15 +8,13 @@ import { useUser } from '../services/UserProvider'
  *
  * @returns {JSX.Element} Un élément JSX représentant une carte avec l'icône et la valeur du nutriment.
  */
-function NutrientCards({ icone, name }) {
-    const { userMainData, loading } = useUser()
-
-    if (loading) return <p>Chargement des données...</p>
+function NutrientCards({ icone, name, data }) {
+    console.log('cards', data)
     const nutrientValues = {
-        Calories: `${userMainData.calories} kCal`,
-        Proteines: `${userMainData.proteines} g`,
-        Glucides: `${userMainData.glucides} g`,
-        Lipides: `${userMainData.lipides} g`,
+        Calories: `${data} kCal`,
+        Proteines: `${data} g`,
+        Glucides: `${data} g`,
+        Lipides: `${data} g`,
     }
     return (
         <div className="calories">

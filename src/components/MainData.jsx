@@ -1,4 +1,4 @@
-import { useUser } from '../services/UserProvider'
+//import { useUser } from '../services/UserProvider'
 /**
  * Afficher le nom de l'utilisateur ainsin qu'un message de félicitations si l'utilisateur a atteint ses objectifs.
  *
@@ -6,18 +6,14 @@ import { useUser } from '../services/UserProvider'
  *
  * @returns {JSX.Element} Le composant affichant un message personnalisé avec le prénom de l'utilisateur.
  */
-function MainData() {
-    const { userMainData, loading } = useUser()
+function MainData({ data }) {
+    console.log('prenom', data)
 
-    if (loading) return <p>Chargement des données...</p>
     return (
         <>
             <div className="main-profil">
                 <h1 className="profil">
-                    Bonjour{' '}
-                    <span className="profil_name">
-                        {userMainData?.firstName}
-                    </span>
+                    Bonjour <span className="profil_name">{data}</span>
                 </h1>
                 <p className="profil_texte">
                     Félicitation ! Vous avez explosé vos objectifs hier 👏

@@ -1,7 +1,3 @@
-import { useParams } from 'react-router-dom'
-import { getUserAverageSessions } from '../services/api'
-import useEffectGetData from '../services/useEffectGetData'
-import { UserAverageSessions } from '../services/UserDataModel'
 import {
     LineChart,
     Line,
@@ -67,15 +63,7 @@ const CustomCursor = ({ points }) => {
  *
  * @returns {JSX.Element} Le composant affichant le graphique des sessions moyennes.
  */
-function AverageSessions() {
-    const { userId } = useParams()
-    const { data: userAverageSessions, loading } = useEffectGetData(
-        getUserAverageSessions,
-        userId,
-        UserAverageSessions
-    )
-
-    if (loading) return <p>Chargement des données...</p>
+function AverageSessions({ data }) {
     return (
         <div className="chart session">
             <p className="session-title">
@@ -87,16 +75,12 @@ function AverageSessions() {
                     data={[
                         {
                             day: '',
-                            sessionLength:
-                                userAverageSessions.sessions[0].sessionLength,
+                            sessionLength: data[0].sessionLength,
                         },
-                        ...userAverageSessions.sessions,
+                        ...data,
                         {
                             day: '',
-                            sessionLength:
-                                userAverageSessions.sessions[
-                                    userAverageSessions.sessions.length - 1
-                                ].sessionLength,
+                            sessionLength: data[data.length - 1].sessionLength,
                         },
                     ]}
                     margin={{ top: 20, right: 0, left: 0, bottom: 20 }}

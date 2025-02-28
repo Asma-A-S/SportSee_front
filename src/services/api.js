@@ -13,19 +13,24 @@ const api = axios.create({
  * @returns {Promise<Object>} les données de l'utilisateur
  */
 const axiosData = async (url, mockKey, userId) => {
-    const useMock = import.meta.env.VITE_USE_MOCK === 'true'
-    if (useMock) {
-        const data = mockData[mockKey]
-        const userIdNumber = parseInt(userId, 10)
-        const result = data.find(
-            (user) => user.id === userIdNumber || user.userId === userIdNumber
-        )
-        console.log('données utilisées: données mockées')
-        return result
+    try {
+        const useMock = import.meta.env.VITE_USE_MOCK === 'true'
+        if (useMock) {
+            const data = mockData[mockKey]
+            const userIdNumber = parseInt(userId, 10)
+            const result = data.find(
+                (user) =>
+                    user.id === userIdNumber || user.userId === userIdNumber
+            )
+            console.log('données utilisées: données mockées')
+            return result
+        }
+        const response = await api.get(url)
+        console.log('données utilisées: données api')
+        return response.data.data
+    } catch (err) {
+        console.error('Erreur lors de la récupération des données: ', err)
     }
-    const response = await api.get(url)
-    console.log('données utilisées: données api')
-    return response.data.data
 }
 /**
  *
